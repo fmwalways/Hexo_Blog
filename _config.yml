@@ -71,9 +71,8 @@ theme: ad
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/fmwalways/Hexo_Blog_Static.git
+  repository: git@github.com:fmwalways/Hexo_Blog_Static.git
   branch: master
-  token: $GITHUB_TOKEN
 
 
 feed:
