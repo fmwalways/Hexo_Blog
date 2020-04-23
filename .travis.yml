@@ -12,8 +12,8 @@ install:
 
 
 before_script:
-  - git user.name fomav
-  - git user.email fomav@foxmail.com
+  - git config user.name fomav
+  - git config user.email fomav@foxmail.com
 
 script:
   - hexo d
