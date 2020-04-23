@@ -4,10 +4,14 @@ node_js:
   - node
 
 
+
 install:
   - npm install -g hexo
   - npm install
 
 
 script:
-  - hexo d
+  - hexo g
+
+after_script:
+  -
