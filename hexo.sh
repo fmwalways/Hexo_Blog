@@ -1,1 +1,0 @@
-hexo g;hexo d;source git.sh
