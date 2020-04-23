@@ -10,6 +10,11 @@ install:
   - npm install
 
 
+
+before_script:
+  - git user.name fomav
+  - git user.email fomav@foxmail.com
+
 script:
   - hexo d
 
