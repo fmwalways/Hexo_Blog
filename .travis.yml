@@ -39,7 +39,7 @@ script:
 
 deploy:
   provider: script
-  script: scripts/deploy.sh $SSH_USER $SSH_HOST $SSH_PORT
+  script: bash scripts/deploy.sh $SSH_USER $SSH_HOST $SSH_PORT
   on:
     branch: master
 
