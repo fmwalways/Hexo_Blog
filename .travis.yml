@@ -40,6 +40,7 @@ script:
 deploy:
   provider: script
   script: bash deploy/deploy_aliyun.sh
+  skip_cleanup: false
   on:
     branch: master
 
