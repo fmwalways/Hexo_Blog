@@ -36,10 +36,14 @@ systemctl stop firewalld.service
 **CentOS 7**、**RedHat 7** 之前的 **Linux** 发行版端口设置
 
 ```
-##开启27017端口接收数据
+#开启27017端口接收数据
 /sbin/iptables -I INPUT -p tcp --dport 27017 -j ACCEPT
 #开启27017端口发送数据
 /sbin/iptables -I OUTPUT -p tcp --dport 27017 -j ACCEPT
+#查找所有规则
+/sbin/iptables -L INPUT --line-numbers
+#删除一条规则
+/sbin/iptables -D INPUT 3  (3是规则中的行号)
 #保存配置
 /etc/rc.d/init.d/iptables save
 #重启防火墙服务
@@ -52,6 +56,8 @@ systemctl stop firewalld.service
 ```
 # --zone 作用域
 # --add-port=27017/tcp 添加端口，格式为：端口/通讯协议
+# --remove-port=27017/tcp 移除端口，格式为：端口/通讯协议
 # --permanent 永久生效，没有此参数重启后失效
 firewall-cmd --zone=public --add-port=27017/tcp --permanent
+firewall-cmd --zone=public --remove-port=27017/tcp --permanent
 ```
