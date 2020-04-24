@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
-echo $SSH_HOST
-echo $1
-ssh $1@$2:$3
+ssh -p $SSH_ALI_PORT $SSH_ALI_USER@$SSH_ALI_HOST
 cd /home/blog/public/
 git fetch --all && git reset --hard origin/master && git pull

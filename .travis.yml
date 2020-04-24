@@ -39,7 +39,7 @@ script:
 
 deploy:
   provider: script
-  script: bash deploy/deploy_aliyun.sh $SSH_USER $SSH_HOST $SSH_PORT
+  script: bash deploy/deploy_aliyun.sh
   on:
     branch: master
 
