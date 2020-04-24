@@ -5,7 +5,9 @@ node_js:
 
 
 addons:
-  ssh_known_hosts: github.com
+  ssh_known_hosts:
+    - github.com
+    - $SSH_HOST
 
 cache:
   directories:
