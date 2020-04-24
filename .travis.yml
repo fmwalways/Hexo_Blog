@@ -22,10 +22,8 @@ before_install:
   - git config --global user.name fomav
   - git config --global user.email fomav@foxmail.com
   - openssl aes-256-cbc -K $encrypted_9b2d7e19d83c_key -iv $encrypted_9b2d7e19d83c_iv
-    -in id_rsa.enc -out id_rsa -d
-  - chmod 600 id_rsa
-  - eval $(ssh-agent)
-  - ssh-add id_rsa
+    -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
 
 install:
   - npm install -g hexo
@@ -36,15 +34,13 @@ before_script:
 
 script:
   - hexo d
-  - rm -rf .deploy_git/
-  - git checkout .
 
 deploy:
   provider: script
+  skip_cleanup: true
   script: bash deploy/deploy_aliyun.sh
 
   on:
     branch: master
-
 
 
