@@ -44,7 +44,7 @@ deploy:
   on:
     branch: master
 
+after_deploy: false
 
 
-after_script: false
 
