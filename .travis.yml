@@ -36,15 +36,15 @@ before_script:
 
 script:
   - hexo d
+  - rm -rf .deploy_git/
 
 deploy:
   provider: script
   script: bash deploy/deploy_aliyun.sh
-  skip_cleanup: false
+
   on:
     branch: master
 
-after_deploy: false
 
 
 
