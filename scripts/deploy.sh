@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 echo($1)
 ssh $1@$2:$3
 cd /home/blog/public/
