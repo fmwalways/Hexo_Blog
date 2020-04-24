@@ -7,6 +7,12 @@ node_js:
 addons:
   ssh_known_hosts: github.com
 
+
+
+before_install:
+  - git config --global user.name fomav
+  - git cofnig --global user.email fomav@foxmail.com
+
 install:
   - npm install -g hexo
   - npm install
@@ -20,6 +26,10 @@ before_script:
   - eval $(ssh-agent)
   - ssh-add id_rsa
   - git clone git@github.com:fmwalways/Hexo_Blog_Static.git .deploy_git
+
 script:
   - hexo d
+
+
+
 
