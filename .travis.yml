@@ -4,6 +4,10 @@ node_js:
   - 10.2.1
 
 
+branches:
+  only:
+    - master
+
 addons:
   ssh_known_hosts:
     - github.com
@@ -35,7 +39,7 @@ script:
 
 deploy:
   provider: script
-  script: bash scripts/deploy.sh $SSH_USER $SSH_HOST $SSH_PORT
+  script: scripts/deploy.sh $SSH_USER $SSH_HOST $SSH_PORT
   on:
     branch: master
 
