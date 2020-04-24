@@ -1,4 +1,3 @@
-echo($SSH_HOST)
-ssh $SSH_USER@$SSH_HOST:&SSH_PORT
+ssh $1@$2:$3
 cd /home/blog/public/
 git fetch --all && git reset --hard origin/master && git pull
