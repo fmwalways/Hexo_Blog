@@ -46,17 +46,17 @@ git version 2.13.0.windows.1
 2.Git 账户配置：
 如果没有Github账号先去注册账号 [GitHub](https://github.com/)
 创建代码库
-![](https://dev.tencent.com/u/fomav/p/Hexo_Res/git/raw/master/20170818230706.png)
+![](https://raw.githubusercontent.com/fmwalways/Hexo_Res/master/20170818230706.png)
 
 注意：如果你想用yourname.github.io这种类型的域名，你在创建仓库的名称的时候就该这样命名yourname.github.io，否则GitHub会给你生成一个yourname.github.io/projectname的地址
-![](https://dev.tencent.com/u/fomav/p/Hexo_Res/git/raw/master/20170818232507.png)
+![](https://raw.githubusercontent.com/fmwalways/Hexo_Res/master/20170818232507.png)
 
 仓库创建好以后我们就去项目主页中的Setting中找到GitHub Pages Source选项选择master branch 点击save
 
-![](https://dev.tencent.com/u/fomav/p/Hexo_Res/git/raw/master/20170818234302.png)
+![](https://raw.githubusercontent.com/fmwalways/Hexo_Res/master/20170818234302.png)
 
 
-![](https://dev.tencent.com/u/fomav/p/Hexo_Res/git/raw/master/20170818234329.png)
+![](https://raw.githubusercontent.com/fmwalways/Hexo_Res/master/20170818234329.png)
 
 如果配置没有问题的话我们这个时候yourname.github.io 应该就可以访问了，可能需要15分钟左右。此时我们的GitHub环境已经配置完毕。
 

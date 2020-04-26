@@ -113,7 +113,7 @@ Git仓库为我们提供了WebHooks来监控我们的仓库状态，这样我们
 
 - 配置WebHooks
 
-![](https://dev.tencent.com/u/fomav/p/Hexo_Res/git/raw/master/20170213211059.png)
+![](https://raw.githubusercontent.com/fmwalways/Hexo_Res/master/20170213211059.png)
 
 如图所示：当仓库发生push的时候，会发送一个http请求[http://fomav.com:4002/webhooks/push/master](http://fomav.com:4002/webhooks/push/master)，我们在服务器处理这个请求就可以了。
 
