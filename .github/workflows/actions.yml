@@ -37,8 +37,6 @@ jobs:
               IdentityFile ~/.ssh/id_rsa
           if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
       - name: prepare git config
-        env:
-          SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
         run: |
           git config --global user.name fomav; git config --global user.email fomav@foxmail.com;
       - name: compile hexo blog
@@ -50,4 +48,4 @@ jobs:
           username: ${{ secrets.REMOTE_SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_SERVER_PORT }}
-          script: cd /home/blog/; git fetch --all && git reset --hard origin/master && git pull
+          script: cd /home/blog/hexo; git fetch --all && git reset --hard origin/master && git pull
