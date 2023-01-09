@@ -27,9 +27,11 @@ jobs:
       - name: prepare npm environment
         run: npm install -g hexo; npm install
       - name: prepare git config
+        env:
+          SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
         run: |
           git config --global user.name fomav; git config --global user.email fomav@foxmail.com; 
-          cat ${{ secrets.SSH_PUBLIC_KEY }} >> ~/.ssh/id_rsa.pub; chmod 600 ~/.ssh/id_rsa.pub
+          cat ${SSH_PUBLIC_KEY} >> ~/.ssh/id_rsa.pub; chmod 600 ~/.ssh/id_rsa.pub
       - name: compile hexo blog
         run: hexo d
       - name: deploy cloud server
