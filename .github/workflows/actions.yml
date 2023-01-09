@@ -1,4 +1,4 @@
-name: Hexo_Blog_CI
+name: Blog_Actions
 
 on:
   push:
@@ -23,14 +23,13 @@ jobs:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}
+          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}
       - name: prepare npm environment
-        run: |
-          npm install -g hexo
-          npm install
+        run: npm install -g hexo; npm install
+      - name: prepare git config
+        run: git config --global user.name fomav; git config --global user.email fomav@foxmail.com
+      - name: compile hexo blog
+        run: hexo d
       - name: deploy cloud server
         uses: appleboy/ssh-action@v0.1.7
         with:
