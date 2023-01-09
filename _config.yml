@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 付梦威的个人博客
+title: 如水似风的人生
 subtitle:
 description:
 author: fomav
@@ -65,7 +65,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: ad
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
