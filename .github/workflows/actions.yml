@@ -1,4 +1,4 @@
-name: Hexo Blog CI
+name: Hexo_Blog_CI
 
 on:
   push:
