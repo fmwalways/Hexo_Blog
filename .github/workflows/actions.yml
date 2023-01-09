@@ -26,8 +26,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}
       - name: prepare npm environment
         run: |
           npm install -g hexo
           npm install
+      - name: deploy cloud server
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.REMOTE_SERVER_HOST }}
+          username: ${{ secrets.REMOTE_SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.REMOTE_SERVER_PORT }}
+          script: cd /home/blog/; git fetch --all && git reset --hard origin/master && git pull
