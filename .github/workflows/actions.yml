@@ -26,12 +26,21 @@ jobs:
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}
       - name: prepare npm environment
         run: npm install -g hexo; npm install
+      - name: prepare git key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_rsa # optional
+          known_hosts: unnecessary
+          config: |
+            Host github.com
+              IdentityFile ~/.ssh/id_rsa
+          if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
       - name: prepare git config
         env:
           SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
         run: |
-          git config --global user.name fomav; git config --global user.email fomav@foxmail.com; 
-          echo ${SSH_PUBLIC_KEY}
+          git config --global user.name fomav; git config --global user.email fomav@foxmail.com;
       - name: compile hexo blog
         run: hexo d
       - name: deploy cloud server
